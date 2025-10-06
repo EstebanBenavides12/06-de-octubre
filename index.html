@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión - SENA</title>
-    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
     <div class="login-container">
-        <img src="../img/images.png" alt="Logo SENA" class="logo">
+        <img src="img/logoSena.png" alt="Logo SENA" class="logo">
         <h2>Ingreso al Sistema</h2>
         <form id="loginForm">
             <div class="form-group">
@@ -24,7 +24,7 @@
         <p id="mensaje" class="mensaje"></p>
     </div>
     <script type="module">
-        import { validarIngreso } from '../script/ValidarIngreso.js';
+        import { validarIngreso } from './script/validarIngreso.js';
 
         document.getElementById('loginForm').addEventListener('submit', (e) => {
             e.preventDefault();
