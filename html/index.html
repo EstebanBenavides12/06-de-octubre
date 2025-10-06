@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - SENA</title>
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="../img/images.png" alt="Logo SENA" class="logo">
+        <h2>Ingreso al Sistema</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="usuario">Nombre de usuario:</label>
+                <input type="text" id="usuario" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" required>
+            </div>
+            <button type="submit">Ingresar</button>
+        </form>
+        <p id="mensaje" class="mensaje"></p>
+    </div>
+    <script type="module">
+        import { validarIngreso } from '../script/ValidarIngreso.js';
+
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const usuario = document.getElementById('usuario').value;
+            const contrasena = document.getElementById('contrasena').value;
+            const mensaje = document.getElementById('mensaje');
+
+            if (validarIngreso(usuario, contrasena)) {
+                window.location.href = 'juiciosAprendicesFicha.html';
+            } else {
+                mensaje.textContent = 'La contraseña es incorrecta';
+            }
+        });
+    </script>
+</body>
+</html>
